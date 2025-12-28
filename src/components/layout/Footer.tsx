@@ -17,10 +17,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="text-lg font-bold tracking-tight">
-              <span className="text-primary">the</span>
-              learning
-              <span className="text-primary">machine</span>
+            <Link to="/" className="text-lg font-bold tracking-tight flex items-center gap-1">
+              <span className="text-primary">&lt;/&gt;</span>
+              <span>thelearningmachine</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               A passionate fullstack developer crafting modern web experiences
