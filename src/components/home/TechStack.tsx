@@ -24,7 +24,7 @@ const techStack = [
 ];
 
 // Duplicate for seamless loop
-const duplicatedTech = [...techStack, ...techStack];
+const duplicatedTech = [...techStack, ...techStack, ...techStack];
 
 export const TechStack = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -35,11 +35,11 @@ export const TechStack = () => {
 
     let animationId: number;
     let scrollPos = 0;
-    const speed = 0.5;
+    const speed = 0.3;
 
     const animate = () => {
       scrollPos += speed;
-      if (scrollPos >= scrollContainer.scrollWidth / 2) {
+      if (scrollPos >= scrollContainer.scrollWidth / 3) {
         scrollPos = 0;
       }
       scrollContainer.scrollLeft = scrollPos;
@@ -64,31 +64,23 @@ export const TechStack = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 border-y border-border bg-muted/30">
-      <div className="container-custom mb-8">
-        <p className="text-center text-sm font-medium uppercase tracking-wider text-muted-foreground">
-          Tech Stack I Work With
-        </p>
-      </div>
-
+    <section className="py-8 overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex gap-12 overflow-hidden cursor-pointer"
+        className="flex items-center gap-16 overflow-hidden"
         style={{ scrollBehavior: "auto" }}
       >
         {duplicatedTech.map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}
-            className="flex flex-col items-center gap-3 min-w-[120px] group"
+            className="flex items-center gap-3 min-w-fit opacity-60 hover:opacity-100 transition-opacity duration-300"
           >
-            <div className="p-4 rounded-xl bg-background border border-border shadow-sm group-hover:shadow-md group-hover:border-primary/30 transition-all duration-300">
-              <img
-                src={tech.logo}
-                alt={`${tech.name} logo`}
-                className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+            <img
+              src={tech.logo}
+              alt={`${tech.name} logo`}
+              className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
+            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
               {tech.name}
             </span>
           </div>
