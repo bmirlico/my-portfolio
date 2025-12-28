@@ -49,11 +49,11 @@ export const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl md:text-2xl font-bold tracking-tight hover:text-primary transition-colors"
+            className="text-lg md:text-xl font-bold tracking-tight hover:text-primary transition-colors"
           >
-            <span className="text-primary">&lt;</span>
-            dev
-            <span className="text-primary">/&gt;</span>
+            <span className="text-primary">the</span>
+            learning
+            <span className="text-primary">machine</span>
           </Link>
 
           {/* Desktop Navigation */}
