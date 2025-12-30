@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Hero } from "@/components/home/Hero";
 import { TechStack } from "@/components/home/TechStack";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
-import { LatestPosts } from "@/components/home/LatestPosts";
+import { About } from "@/components/home/About";
+import { BlogLink } from "@/components/home/BlogLink";
 import { Contact } from "@/components/home/Contact";
 
 const Index = () => {
@@ -11,7 +12,8 @@ const Index = () => {
       <Hero />
       <TechStack />
       <FeaturedProjects />
-      <LatestPosts />
+      <About />
+      <BlogLink />
       <Contact />
     </Layout>
   );

@@ -64,7 +64,7 @@ export const TechStack = () => {
   }, []);
 
   return (
-    <section className="py-8 overflow-hidden">
+    <section id="tech" className="py-8 overflow-hidden">
       <div
         ref={scrollRef}
         className="flex items-center gap-16 overflow-hidden"
