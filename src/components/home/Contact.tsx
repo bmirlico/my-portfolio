@@ -1,27 +1,47 @@
 import { Mail, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 export const Contact = () => {
 	const [isLoading, setIsLoading] = useState(false);
+	const formRef = useRef<HTMLFormElement>(null);
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!formRef.current) return;
+
 		setIsLoading(true);
 
-		// Simulate form submission
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		try {
+			await emailjs.sendForm(
+				EMAILJS_SERVICE_ID,
+				EMAILJS_TEMPLATE_ID,
+				formRef.current,
+				EMAILJS_PUBLIC_KEY
+			);
 
-		toast({
-			title: "Message sent!",
-			description: "Thanks for reaching out. I'll get back to you soon.",
-		});
-
-		setIsLoading(false);
-		(e.target as HTMLFormElement).reset();
+			toast({
+				title: "Message sent!",
+				description: "Thanks for reaching out. I'll get back to you soon.",
+			});
+			formRef.current.reset();
+		} catch (error) {
+			toast({
+				title: "Error",
+				description: "Something went wrong. Please try again or email me directly.",
+				variant: "destructive",
+			});
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -76,6 +96,7 @@ export const Contact = () => {
 
 						{/* Contact form */}
 						<form
+							ref={formRef}
 							onSubmit={handleSubmit}
 							className="md:col-span-3 glass-card rounded-2xl p-6 md:p-8"
 						>
