@@ -10,7 +10,7 @@ export const Hero = () => {
 	};
 
 	return (
-		<section id="hero" className="section-padding relative overflow-hidden">
+		<section id="hero" className="pt-8 md:pt-16 pb-20 md:pb-28 relative overflow-hidden">
 			{/* Background decoration */}
 			<div className="absolute inset-0 -z-10">
 				<div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
@@ -19,8 +19,17 @@ export const Hero = () => {
 
 			<div className="container-custom">
 				<div className="max-w-3xl mx-auto text-center">
+					{/* Avatar */}
+					<div className="mb-6 animate-fade-up opacity-0 stagger-1">
+						<img
+							src="/profile.jpeg"
+							alt="Bastien Mirlicourtois"
+							className="w-24 h-24 md:w-28 md:h-28 rounded-full mx-auto object-cover ring-4 ring-primary/20 shadow-lg"
+						/>
+					</div>
+
 					{/* Main heading */}
-					<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-up opacity-0 stagger-1">
+					<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-up opacity-0 stagger-2">
 						Hi, I'm{" "}
 						<span className="text-gradient whitespace-nowrap">
 							Bastien Mirlicourtois
@@ -28,7 +37,7 @@ export const Hero = () => {
 					</h1>
 
 					{/* Subtitle */}
-					<p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-up opacity-0 stagger-2">
+					<p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-up opacity-0 stagger-3">
 						A passionate{" "}
 						<span className="text-foreground font-medium">
 							fullstack developer
@@ -42,7 +51,7 @@ export const Hero = () => {
 					</p>
 
 					{/* CTA buttons */}
-					<div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up opacity-0 stagger-3">
+					<div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up opacity-0 stagger-4">
 						<Button
 							size="lg"
 							className="rounded-full px-8 group"
@@ -65,7 +74,7 @@ export const Hero = () => {
 					</div>
 
 					{/* Social links */}
-					<div className="flex items-center justify-center gap-4 animate-fade-up opacity-0 stagger-4">
+					<div className="flex items-center justify-center gap-4 animate-fade-up opacity-0 stagger-5">
 						<a
 							href="https://github.com/bmirlico"
 							target="_blank"
