@@ -35,7 +35,7 @@ const projects = [
 
 export const FeaturedProjects = () => {
   return (
-    <section id="projects" className="section-padding bg-muted/30">
+    <section id="projects" className="section-padding bg-muted/30 border-t border-border/40">
       <div className="container-custom">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
