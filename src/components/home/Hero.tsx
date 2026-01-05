@@ -41,11 +41,15 @@ export const Hero = () => {
 
 					{/* Subtitle */}
 					<p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-up opacity-0 stagger-3">
-						A passionate{" "}
+						An{" "}
+						<span className="text-foreground font-medium">
+							ex-strategy consultant
+						</span>{" "}
+						turned{" "}
 						<span className="text-foreground font-medium">
 							fullstack developer
 						</span>{" "}
-						and{" "}
+						as well as{" "}
 						<span className="text-foreground font-medium">
 							technical writer
 						</span>{" "}
