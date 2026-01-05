@@ -1,35 +1,23 @@
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Coding Challenge Generator",
     description:
-      "A modern e-commerce solution with real-time inventory, Stripe payments, and an intuitive admin dashboard.",
-    tags: ["Next.js", "TypeScript", "Prisma", "Stripe"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+      "A web app that generates personalized coding challenges using AI, with user authentication and progress tracking.",
+    tags: ["React", "FastAPI", "OpenAI", "SQLAlchemy"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
+    github: "https://github.com/bmirlico/coding-challenge-generator",
   },
   {
     id: 2,
-    title: "AI Content Generator",
+    title: "Transcendance",
     description:
-      "An AI-powered content creation tool using OpenAI GPT-4 for generating blog posts, social media content, and more.",
-    tags: ["React", "Node.js", "OpenAI", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-  },
-  {
-    id: 3,
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop, and team workspaces.",
-    tags: ["Vue.js", "Firebase", "Tailwind", "Socket.io"],
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+      "A multiplayer Pong game with real-time WebSocket gameplay, tournaments, and blockchain score recording.",
+    tags: ["Django", "Docker", "WebSockets", "Solidity"],
+    image: "https://images.unsplash.com/photo-1614294148960-9aa740632a87?w=800&h=500&fit=crop",
+    github: "https://github.com/BdClement/Docker_Transcendance",
   },
 ];
 
@@ -51,7 +39,7 @@ export const FeaturedProjects = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <article
               key={project.id}
@@ -67,7 +55,7 @@ export const FeaturedProjects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Hover links */}
+                {/* Hover link */}
                 <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <a
                     href={project.github}
@@ -76,14 +64,6 @@ export const FeaturedProjects = () => {
                     className="p-2 rounded-lg bg-background/90 backdrop-blur hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     <Github className="h-4 w-4" />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-background/90 backdrop-blur hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <ExternalLink className="h-4 w-4" />
                   </a>
                 </div>
               </div>
