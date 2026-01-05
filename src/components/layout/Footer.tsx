@@ -1,19 +1,23 @@
-import {
-	ExternalLink,
-	Github,
-	Heart,
-	Linkedin,
-	Mail,
-	Twitter,
-} from "lucide-react";
+import { ExternalLink, Github, Heart, Linkedin, Mail } from "lucide-react";
 
 const BLOG_URL = "https://thelearningmachine.dev";
 
+// Custom X (Twitter) icon component
+const XIcon = ({ className }: { className?: string }) => (
+	<svg className={className} viewBox="0 0 24 24" fill="currentColor">
+		<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+	</svg>
+);
+
 const socialLinks = [
-	{ icon: Github, href: "https://github.com", label: "GitHub" },
-	{ icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-	{ icon: Twitter, href: "https://twitter.com", label: "X" },
-	{ icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+	{ icon: Github, href: "https://github.com/bmirlico", label: "GitHub" },
+	{
+		icon: Linkedin,
+		href: "https://www.linkedin.com/in/bastien-mirlicourtois/",
+		label: "LinkedIn",
+	},
+	{ icon: XIcon, href: "https://x.com/bmirlico", label: "X" },
+	{ icon: Mail, href: "mailto:bastienmirlicourtois@gmail.com", label: "Email" },
 ];
 
 const navLinks = [
@@ -50,7 +54,7 @@ export const Footer = () => {
 							<span className="text-primary">&lt;</span>
 							<span>bastien</span>
 							<span className="text-primary">mirlicourtois</span>
-							<span className="text-primary">/&gt;</span>
+							<span>/&gt;</span>
 						</a>
 						<p className="text-muted-foreground text-sm max-w-xs">
 							A passionate fullstack developer crafting modern web experiences

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail, MapPin, Briefcase, GraduationCap, Code } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Briefcase, GraduationCap, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const skills = [
@@ -10,16 +10,16 @@ const skills = [
 
 const experience = [
   {
-    title: "Junior Fullstack Developer",
-    company: "TechStartup Inc.",
-    period: "2023 - Present",
-    description: "Building modern web applications with React and Node.js. Contributing to the development of customer-facing features and internal tools.",
+    title: "Software Engineer – Full Stack",
+    company: "Faks",
+    period: "Jan. 2025 - Present",
+    description: "Building end-to-end full-stack features in Ruby/React. Developing REST APIs in Rails, backend services, and SQL dashboards on Metabase.",
   },
   {
-    title: "Frontend Developer Intern",
-    company: "Digital Agency",
-    period: "2022 - 2023",
-    description: "Developed responsive websites and web applications using React and TypeScript. Collaborated with designers to implement pixel-perfect UIs.",
+    title: "Strategy & Data Analytics Consultant",
+    company: "Advancy",
+    period: "2020 - 2022",
+    description: "Performed market modelling using Python (pandas, xlwings) on Euromonitor datasets. Prepared and framed customer meetings to specify project scope.",
   },
 ];
 
@@ -35,7 +35,7 @@ export const About = () => {
               <div className="relative mb-6">
                 <div className="aspect-square rounded-2xl overflow-hidden glass-card">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                    src="/profile.jpeg"
                     alt="Bastien Mirlicourtois"
                     className="w-full h-full object-cover"
                   />
@@ -64,29 +64,31 @@ export const About = () => {
               {/* Social links */}
               <div className="flex gap-2 mb-6">
                 <Button variant="outline" size="icon" className="rounded-full" asChild>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/bmirlico" target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" className="rounded-full" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/bastien-mirlicourtois/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-4 w-4" />
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" className="rounded-full" asChild>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-4 w-4" />
+                  <a href="https://x.com/bmirlico" target="_blank" rel="noopener noreferrer">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
                   </a>
                 </Button>
                 <Button variant="outline" size="icon" className="rounded-full" asChild>
-                  <a href="mailto:hello@bastienmirlicourtois.com">
+                  <a href="mailto:bastienmirlicourtois@gmail.com">
                     <Mail className="h-4 w-4" />
                   </a>
                 </Button>
               </div>
 
               <Button className="w-full rounded-full" asChild>
-                <a href="mailto:hello@bastienmirlicourtois.com">Get in Touch</a>
+                <a href="mailto:bastienmirlicourtois@gmail.com">Get in Touch</a>
               </Button>
             </div>
           </div>
