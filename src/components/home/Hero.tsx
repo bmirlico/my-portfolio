@@ -10,7 +10,10 @@ export const Hero = () => {
 	};
 
 	return (
-		<section id="hero" className="pt-8 md:pt-16 pb-20 md:pb-28 relative overflow-hidden">
+		<section
+			id="hero"
+			className="pt-8 md:pt-12 pb-20 md:pb-28 relative overflow-hidden"
+		>
 			{/* Background decoration */}
 			<div className="absolute inset-0 -z-10">
 				<div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
@@ -98,7 +101,7 @@ export const Hero = () => {
 							className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-200"
 						>
 							<svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-								<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+								<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
 							</svg>
 						</a>
 					</div>
