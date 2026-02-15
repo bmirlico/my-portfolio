@@ -1,73 +1,152 @@
-# Welcome to your Lovable project
+# 🌐 Bastien Mirlicourtois — Portfolio
 
-## Project info
+A modern, responsive developer portfolio built with React 19, TypeScript, and Tailwind CSS. Features an AI conversational widget, 3D animations, and a contact form.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🔗 **Live:** [bmirlico.com](https://bmirlico.com)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📑 Table of Contents
 
-**Use Lovable**
+- [✨ Features](#-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
+- [⚙️ Environment Variables](#️-environment-variables)
+- [📦 Scripts](#-scripts)
+- [🧩 Key Components](#-key-components)
+- [📄 License](#-license)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- 🎤 **AI Conversational Widget** — Talk to an ElevenLabs AI agent directly from the hero section (WebRTC on desktop, phone call on mobile)
+- 🌀 **3D Animated Orb** — Three.js-powered visual feedback during AI conversations
+- 📬 **Contact Form** — EmailJS integration for direct messaging
+- 🎨 **Glass-morphism UI** — Modern design with backdrop blur, gradients, and smooth animations
+- 🌗 **Dark/Light Mode** — Theme switching with system preference detection
+- 📱 **Fully Responsive** — Mobile-first design with adaptive layouts
+- ⚡ **Particle Animations** — Interactive background particles
+- 🔍 **SEO Optimized** — Open Graph tags, structured data, sitemap
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tech Stack
 
-Follow these steps:
+| Category | Technologies |
+|---|---|
+| **Core** | React 19, TypeScript, Vite |
+| **Styling** | Tailwind CSS, shadcn/ui, Radix UI |
+| **3D/Animation** | Three.js, React Three Fiber, Motion |
+| **AI** | ElevenLabs React SDK (WebRTC) |
+| **Forms** | React Hook Form, Zod, EmailJS |
+| **Icons** | Lucide React |
+| **Routing** | React Router v6 |
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📁 Project Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
+```
+src/
+├── components/
+│   ├── home/                    # 📄 Page sections
+│   │   ├── Hero.tsx             # Hero with AI widget
+│   │   ├── TechStack.tsx        # Technical skills
+│   │   ├── FeaturedProjects.tsx # Project showcase
+│   │   ├── About.tsx            # About section
+│   │   ├── BlogLink.tsx         # Blog CTA
+│   │   ├── Contact.tsx          # Contact form (EmailJS)
+│   │   └── ElevenLabsWidget.tsx # 🎤 AI conversational widget
+│   ├── layout/                  # 🏗️ Layout components
+│   │   ├── Layout.tsx
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   └── ui/                      # 🧱 shadcn/ui components + Orb
+├── hooks/                       # 🪝 Custom hooks
+│   ├── use-mobile.tsx
+│   └── use-toast.ts
+├── lib/
+│   └── utils.ts                 # 🔧 Utility functions
+├── pages/
+│   └── Index.tsx                # 🏠 Homepage
+├── App.tsx                      # App root with providers
+└── main.tsx                     # Entry point
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 🚀 Getting Started
+
+**Prerequisites:** Node.js 18+ and npm (or bun)
+
+```bash
+# Clone the repo
+git clone https://github.com/bmirlico/my-portfolio.git
+cd my-portfolio
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your actual keys
+
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app runs on `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## ⚙️ Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a `.env` file at the root based on `.env.example`:
 
-## What technologies are used for this project?
+```env
+# 📬 EmailJS — https://www.emailjs.com/
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
-This project is built with:
+# 🎤 ElevenLabs Conversational AI — https://elevenlabs.io/
+VITE_ELEVENLABS_AGENT_ID=your_agent_id
+VITE_ELEVENLABS_PHONE_NUMBER=+33XXXXXXXXX
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📦 Scripts
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+| Command | Description |
+|---|---|
+| `npm run dev` | 🔥 Start dev server with hot reload |
+| `npm run build` | 📦 Production build to `dist/` |
+| `npm run preview` | 👀 Preview production build locally |
+| `npm run lint` | 🔍 Run ESLint |
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🧩 Key Components
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### 🎤 ElevenLabs AI Widget (`ElevenLabsWidget.tsx`)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Interactive conversational AI integrated in the Hero section:
+- **Desktop:** WebRTC voice conversation via `useConversation` hook with a Three.js animated Orb for visual feedback
+- **Mobile:** Direct phone call via `tel:` link to the ElevenLabs Twilio agent
+
+### 🌀 Orb (`orb.tsx`)
+
+Three.js shader-based animated orb that reacts to conversation state (`listening`, `talking`, `thinking`). Uses a custom GLSL fragment shader with perlin noise for organic motion.
+
+### 📬 Contact Form (`Contact.tsx`)
+
+EmailJS-powered contact form with validation, loading states, and toast notifications.
+
+---
+
+## 📄 License
+
+MIT
