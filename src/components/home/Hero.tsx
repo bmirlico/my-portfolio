@@ -1,5 +1,6 @@
 import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ElevenLabsWidget } from "./ElevenLabsWidget";
 
 export const Hero = () => {
 	const scrollToSection = (href: string) => {
@@ -78,6 +79,7 @@ export const Hero = () => {
 								Download CV
 							</a>
 						</Button>
+						<ElevenLabsWidget />
 					</div>
 
 					{/* Social links */}
