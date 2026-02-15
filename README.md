@@ -2,7 +2,7 @@
 
 A modern, responsive developer portfolio built with React 19, TypeScript, and Tailwind CSS. Features an AI conversational widget, 3D animations, and a contact form.
 
-🔗 **Live:** [bmirlico.com](https://bmirlico.com)
+🔗 **Live:** [bastienmirlicourtois.com](https://bastienmirlicourtois.com)
 
 ---
 
