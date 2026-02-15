@@ -120,11 +120,13 @@ export const ElevenLabsWidget = () => {
 	// Desktop: active conversation
 	return (
 		<div className="glass-card rounded-2xl p-4 flex items-center gap-4 animate-scale-in w-full max-w-md mx-auto">
-			<div className="w-16 h-16 flex-shrink-0">
+			<div className="w-20 h-20 flex-shrink-0 rounded-full overflow-hidden relative">
+				{/* CSS fallback while Three.js initializes */}
+				<div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse" />
 				<Orb
 					agentState={agentState}
 					colors={["#2dd4a8", "#14b8a6"]}
-					className="w-full h-full"
+					className="relative w-full h-full"
 				/>
 			</div>
 
