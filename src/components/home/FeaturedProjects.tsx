@@ -1,22 +1,29 @@
-import { Github } from "lucide-react";
-
 const projects = [
   {
     id: 1,
-    title: "Coding Challenge Generator",
+    title: "CallClaw",
     description:
-      "A web app that generates personalized coding challenges using AI, with user authentication and progress tracking.",
-    tags: ["React", "FastAPI", "OpenAI", "SQLAlchemy"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
-    github: "https://github.com/bmirlico/coding-challenge-generator",
+      "An AI agent that joins your Google Meet, executes real actions mid-call, and remembers everything across meetings.",
+    tags: ["Recall AI", "FastAPI", "React", "Python", "Anthropic"],
+    image: "https://images.unsplash.com/photo-1588873281272-14886ba1f737?w=800&h=500&fit=crop",
+    github: "https://github.com/bmirlico/call-claw",
   },
   {
     id: 2,
+    title: "Elderly",
+    description:
+      "AI phone companion that calls elderly people daily, analyzes conversations for health signals, and keeps families informed through a real-time dashboard.",
+    tags: ["React", "Python", "FastAPI", "Twilio"],
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop",
+    github: "https://github.com/bmirlico/elderly-companion",
+  },
+  {
+    id: 3,
     title: "Transcendance",
     description:
       "A multiplayer Pong game with real-time WebSocket gameplay, tournaments, and blockchain score recording.",
-    tags: ["Django", "Docker", "WebSockets", "Solidity"],
-    image: "https://images.unsplash.com/photo-1614294148960-9aa740632a87?w=800&h=500&fit=crop",
+    tags: ["Django", "Python", "Docker", "WebSockets", "Solidity"],
+    image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800&h=500&fit=crop",
     github: "https://github.com/BdClement/Docker_Transcendance",
   },
 ];
@@ -39,11 +46,15 @@ export const FeaturedProjects = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <article
+            <a
               key={project.id}
-              className="group glass-card-hover rounded-2xl overflow-hidden"
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title} on GitHub`}
+              className="group glass-card-hover rounded-2xl overflow-hidden block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -54,18 +65,6 @@ export const FeaturedProjects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Hover link */}
-                <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-background/90 backdrop-blur hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Github className="h-4 w-4" />
-                  </a>
-                </div>
               </div>
 
               {/* Content */}
@@ -73,7 +72,7 @@ export const FeaturedProjects = () => {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -87,7 +86,7 @@ export const FeaturedProjects = () => {
                   ))}
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
